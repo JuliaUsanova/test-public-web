@@ -3,7 +3,7 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        <span>{{ $t("welcome") }}</span> public-web
+        <span>{{ $t('greetings.welcome') }} </span> public-web
       </h1>
       <h2 class="subtitle">
         Nuxt.js project
