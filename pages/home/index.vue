@@ -14,6 +14,8 @@
       Sit ad simul gloriatur, ea ignota lobortis ius. Ut legimus tibique scaevola mei, vis omnis ludus corpora et.
       Veri perfecto definitiones nam ea. Cum et omnium molestie, per omnes fierent ut.
     </p>
+    <nuxt-link :to="localePath({name: 'index'}, $i18n.locale)">Main</nuxt-link>
+
   </section>
 </template>
 

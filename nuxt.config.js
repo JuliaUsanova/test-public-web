@@ -1,4 +1,7 @@
 module.exports = {
+  plugins: [
+    { src: '~plugins/i18n.js' }
+  ],
   /*
   ** Headers of the page
   */
@@ -17,7 +20,7 @@ module.exports = {
     [
       'nuxt-i18n',
       {
-        locales: ['en', 'fr', 'es'],
+        locales: ['fr', 'es', 'en'],
         ueI18nLoader: false,
         // Separator used to generated routes name for each locale, you shouldn't
         // need to change this
@@ -32,7 +35,7 @@ module.exports = {
         // - 'prefix_except_default': add locale prefix for every locale except default
         // - 'prefix': add locale prefix for every locale
         // - 'prefix_and_default': add locale prefix for every locale and default
-        strategy: 'prefix_except_default',
+        strategy: 'prefix_and_default',
         // Wether or not the translations should be lazy-loaded, if this is enabled,
         // you MUST configure langDir option, and locales must be an array of objects,
         // each containing a file key
@@ -44,6 +47,7 @@ module.exports = {
 
         // Set this to a path to which you want to redirect users accessing root URL (/)
         // rootRedirect: 'index.html',
+
         // Enable browser language detection to automatically redirect user
         // to their preferred language as they visit your app for the first time
         // Set to false to disable
@@ -57,7 +61,7 @@ module.exports = {
           // Set to always redirect to value stored in the cookie, not just once
           alwaysRedirect: false,
           // If no locale for the browsers locale is a match, use this one as a fallback
-          fallbackLocale: null
+          fallbackLocale: 'en'
         },
         // If true, SEO metadata is generated for routes that have i18n enabled.
         // Note that performance can suffer with this enabled and there might be compatibility
@@ -84,10 +88,10 @@ module.exports = {
           }
         },
         // Called right before app's locale changes
-        beforeLanguageSwitch: (oldLocale, newLocale) => null,
+        // beforeLanguageSwitch: (oldLocale, newLocale) => null,
 
-        // Called after app's locale has changed
-        onLanguageSwitched: (oldLocale, newLocale) => null
+        // // Called after app's locale has changed
+        // onLanguageSwitched: (oldLocale, newLocale) => null
       }
     ]
   ],
@@ -113,5 +117,5 @@ module.exports = {
       }
     }
   }
-}
+};
 

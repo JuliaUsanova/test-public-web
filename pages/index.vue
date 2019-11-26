@@ -9,8 +9,9 @@
         Nuxt.js project
       </h2>
       <div class="links">
-        <nuxt-link :to="localePath('home')">Home</nuxt-link>
+        <nuxt-link :to="localePath({name: 'home'}, $i18n.locale)">Home</nuxt-link>
         <nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link>
+        <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
       </div>
     </div>
   </section>
