@@ -25,15 +25,16 @@ module.exports = {
             code: 'fr',
             iso: 'fr-FR',
             name: 'French',
-            langFile: 'fr-FR.json'
+            file: 'fr-FR.json'
           },
           {
             code: 'en',
             iso: 'en-US',
             name: 'English',
-            langFile: 'en-US.json'
+            file: 'en-US.json'
           }
         ],
+        defaultLocale: 'en',
         ueI18nLoader: false,
         // Separator used to generated routes name for each locale, you shouldn't
         // need to change this
@@ -52,7 +53,7 @@ module.exports = {
         // Wether or not the translations should be lazy-loaded, if this is enabled,
         // you MUST configure langDir option, and locales must be an array of objects,
         // each containing a file key
-        lazy: false,
+        lazy: true,
 
         // Directory that contains translations files when lazy-loading messages,
         // this CAN NOT be empty if lazy-loading is enabled
@@ -82,12 +83,13 @@ module.exports = {
         // Note that performance can suffer with this enabled and there might be compatibility
         // issues with some plugins. Recommended way is to set up SEO as described in:
         // https://nuxt-community.github.io/nuxt-i18n/seo.html#improving-performance
+        // TODO: Enable on prod
         seo: false,
         // Fallback base URL to use as prefix for alternate URLs in hreflang tags.
         // By default VueRouter's base URL will be used and only if that is not available,
         // fallback URL will be used.
-        baseUrl: '',
-        defaultLocale: 'en',
+        // TODO: Replace by prod domain
+        baseUrl: 'http://localhost:3000/',
         vueI18n: {
           fallbackLocale: 'en',
           // messages: {
