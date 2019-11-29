@@ -3,14 +3,14 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        <span>{{ $t('greetings.welcome') }} </span> public-web
+        <span>{{ $t('welcome') }} </span> public-web
       </h1>
       <h2 class="subtitle">
         Nuxt.js project
       </h2>
       <div class="links">
         <nuxt-link :to="localePath({name: 'home'}, $i18n.locale)">Home</nuxt-link>
-        <nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link>
+        <nuxt-link :to="switchLocalePath('ru')">Russian</nuxt-link>
         <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
       </div>
     </div>

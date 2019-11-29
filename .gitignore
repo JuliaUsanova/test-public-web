@@ -1,5 +1,6 @@
 # dependencies
 node_modules
+locales/*
 
 # logs
 npm-debug.log
@@ -11,3 +12,6 @@ npm-debug.log
 dist
 
 .idea
+.env
+.DS_Store
+
