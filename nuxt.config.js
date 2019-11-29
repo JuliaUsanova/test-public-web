@@ -20,7 +20,21 @@ module.exports = {
     [
       'nuxt-i18n',
       {
-        locales: ['fr', 'es', 'en'],
+        locales: [
+          {
+            code: 'fr',
+            iso: 'fr-FR',
+            name: 'French',
+            file: 'fr-FR.json'
+          },
+          {
+            code: 'en',
+            iso: 'en-US',
+            name: 'English',
+            file: 'en-US.json'
+          }
+        ],
+        defaultLocale: 'en',
         ueI18nLoader: false,
         // Separator used to generated routes name for each locale, you shouldn't
         // need to change this
@@ -39,53 +53,56 @@ module.exports = {
         // Wether or not the translations should be lazy-loaded, if this is enabled,
         // you MUST configure langDir option, and locales must be an array of objects,
         // each containing a file key
-        lazy: false,
+        lazy: true,
 
         // Directory that contains translations files when lazy-loading messages,
         // this CAN NOT be empty if lazy-loading is enabled
-        langDir: null,
-
+        // langDir: null,
+        langDir: 'locales/',
         // Set this to a path to which you want to redirect users accessing root URL (/)
         // rootRedirect: 'index.html',
 
         // Enable browser language detection to automatically redirect user
         // to their preferred language as they visit your app for the first time
         // Set to false to disable
-        detectBrowserLanguage: {
-          // If enabled, a cookie is set once a user has been redirected to his
-          // preferred language to prevent subsequent redirections
-          // Set to false to redirect every time
-          useCookie: true,
-          // Cookie name
-          cookieKey: 'i18n_redirected',
-          // Set to always redirect to value stored in the cookie, not just once
-          alwaysRedirect: false,
-          // If no locale for the browsers locale is a match, use this one as a fallback
-          fallbackLocale: 'en'
-        },
+        // TODO: Uncomment
+        // detectBrowserLanguage: {
+        //   // If enabled, a cookie is set once a user has been redirected to his
+        //   // preferred language to prevent subsequent redirections
+        //   // Set to false to redirect every time
+        //   useCookie: true,
+        //   // Cookie name
+        //   cookieKey: 'i18n_redirected',
+        //   // Set to always redirect to value stored in the cookie, not just once
+        //   alwaysRedirect: false,
+        //   // If no locale for the browsers locale is a match, use this one as a fallback
+        //   fallbackLocale: 'en'
+        // },
+        detectBrowserLanguage: false,
         // If true, SEO metadata is generated for routes that have i18n enabled.
         // Note that performance can suffer with this enabled and there might be compatibility
         // issues with some plugins. Recommended way is to set up SEO as described in:
         // https://nuxt-community.github.io/nuxt-i18n/seo.html#improving-performance
+        // TODO: Enable on prod
         seo: false,
         // Fallback base URL to use as prefix for alternate URLs in hreflang tags.
         // By default VueRouter's base URL will be used and only if that is not available,
         // fallback URL will be used.
-        baseUrl: '',
-        defaultLocale: 'en',
+        // TODO: Replace by prod domain
+        baseUrl: 'http://localhost:3000/',
         vueI18n: {
           fallbackLocale: 'en',
-          messages: {
-            en: {
-              welcome: 'Welcome'
-            },
-            fr: {
-              welcome: 'Bienvenue'
-            },
-            es: {
-              welcome: 'Bienvenido'
-            }
-          }
+          // messages: {
+          //   en: {
+          //     welcome: 'Welcome'
+          //   },
+          //   fr: {
+          //     welcome: 'Bienvenue'
+          //   },
+          //   es: {
+          //     welcome: 'Bienvenido'
+          //   }
+          // }
         },
         // Called right before app's locale changes
         // beforeLanguageSwitch: (oldLocale, newLocale) => null,
