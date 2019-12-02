@@ -109,6 +109,34 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  loaders: {
+    // file: {},
+    // fontUrl: { limit: 1000 },
+    imgUrl: {
+      limit: 1000,
+      fallback: require.resolve('responsive-loader'),
+      quality: 85
+    },
+    // pugPlain: {},
+    // vue: {
+    //   transformAssetUrls: {
+    //     video: 'src',
+    //     source: 'src',
+    //     object: 'src',
+    //     embed: 'src'
+    //   }
+    // },
+    // css: {},
+    // cssModules: {
+    //   localIdentName: '[local]_[hash:base64:5]'
+    // },
+    // sass: {
+    //   indentedSyntax: true
+    // },
+    // scss: {},
+    // stylus: {},
+    // vueStyle: {}
+  },
   /*
   ** Build configuration
   */
@@ -116,7 +144,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    extend (config, { isDev, isClient, loaders }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
