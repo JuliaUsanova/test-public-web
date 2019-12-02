@@ -70,20 +70,20 @@ module.exports = {
     // Enable browser language detection to automatically redirect user
     // to their preferred language as they visit your app for the first time
     // Set to false to disable
-    // TODO: Uncomment
-    // detectBrowserLanguage: {
-    //   // If enabled, a cookie is set once a user has been redirected to his
-    //   // preferred language to prevent subsequent redirections
-    //   // Set to false to redirect every time
-    //   useCookie: true,
-    //   // Cookie name
-    //   cookieKey: 'i18n_redirected',
-    //   // Set to always redirect to value stored in the cookie, not just once
-    //   alwaysRedirect: false,
-    //   // If no locale for the browsers locale is a match, use this one as a fallback
-    //   fallbackLocale: 'en'
-    // },
-    detectBrowserLanguage: false,
+    detectBrowserLanguage: {
+      // If enabled, a cookie is set once a user has been redirected to his
+      // preferred language to prevent subsequent redirections
+      // Set to false to redirect every time
+      useCookie: true,
+      // Cookie name
+      cookieKey: 'i18n_redirected',
+      // Set to always redirect to value stored in the cookie, not just once
+      alwaysRedirect: false,
+      // If no locale for the browsers locale is a match, use this one as a fallback
+      fallbackLocale: 'en'
+    },
+    // TODO: Uncomment for dev
+    // detectBrowserLanguage: false,
     // If true, SEO metadata is generated for routes that have i18n enabled.
     // Note that performance can suffer with this enabled and there might be compatibility
     // issues with some plugins. Recommended way is to set up SEO as described in:
@@ -96,18 +96,7 @@ module.exports = {
     // TODO: Replace by prod domain
     baseUrl: 'http://localhost:3000/',
     vueI18n: {
-      fallbackLocale: 'en',
-      // messages: {
-      //   en: {
-      //     welcome: 'Welcome'
-      //   },
-      //   fr: {
-      //     welcome: 'Bienvenue'
-      //   },
-      //   es: {
-      //     welcome: 'Bienvenido'
-      //   }
-      // }
+      fallbackLocale: 'en'
     },
     // Called right before app's locale changes
     // beforeLanguageSwitch: (oldLocale, newLocale) => null,
