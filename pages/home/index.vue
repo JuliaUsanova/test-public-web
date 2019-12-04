@@ -7,7 +7,7 @@
 
     <p class="text-bold">
       Lorem ipsum dolor sit amet, an meis lorem choro cum, mel mundi causae eu. Dicant eripuit nec at,
-      in invenire postulant has. Partiendo repudiare adolescens eu sit. Meis detraxit disputationi duo eu, fabellas verterem phaedrum has an, inimicus appellantur vis ne. Nam laoreet civibus ut. Vis vitae iudico constituto te, ex eos aeterno gloriatur.
+      in invenire postulant has. Partiendo repudiare adolescens eu sit. Meis detraxit disputationi duo eu, r vis ne.
     </p>
 
     <p class="text-muted">

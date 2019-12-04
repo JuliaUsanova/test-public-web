@@ -1,0 +1,14 @@
+$background-color: #28cba540;
+$text-color: #40b882;
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-weight: 100;
+}
+
+a[href] {
+    color: $text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+}

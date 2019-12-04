@@ -23,7 +23,7 @@ module.exports = {
     '@nuxtjs/axios',
     '~/modules/hooks'
   ],
-
+  // TODO: LEAVE ONLY LANGUAGES REQUIRED PER TENANT
   i18n: {
     locales: [
       {
@@ -37,6 +37,24 @@ module.exports = {
         iso: 'en-US',
         name: 'English',
         file: 'en.json'
+      },
+      {
+        code: 'de',
+        iso: 'de-CH',
+        name: 'Dutch',
+        file: 'de_CH.json'
+      },
+      {
+        code: 'fr',
+        iso: 'fr-CH',
+        name: 'French',
+        file: 'fr.json'
+      },
+      {
+        code: 'nl-de',
+        iso: 'nl-NL',
+        name: 'Dutch',
+        file: 'nl_NL.json'
       }
     ],
     defaultLocale: 'en',
@@ -54,7 +72,7 @@ module.exports = {
     // - 'prefix_except_default': add locale prefix for every locale except default
     // - 'prefix': add locale prefix for every locale
     // - 'prefix_and_default': add locale prefix for every locale and default
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
     // Wether or not the translations should be lazy-loaded, if this is enabled,
     // you MUST configure langDir option, and locales must be an array of objects,
     // each containing a file key
@@ -105,6 +123,9 @@ module.exports = {
     // onLanguageSwitched: (oldLocale, newLocale) => null
   },
   axios: {},
+  css: [
+    '@/assets/styles/main.scss'
+  ],
   /*
   ** Customize the progress bar color
   */
