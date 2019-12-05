@@ -23,6 +23,9 @@ module.exports = {
     '@nuxtjs/axios',
     '~/modules/hooks'
   ],
+  router: {
+    middleware: 'test'
+  },
   // TODO: LEAVE ONLY LANGUAGES REQUIRED PER TENANT
   i18n: {
     locales: [
