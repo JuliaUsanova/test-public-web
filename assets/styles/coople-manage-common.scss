@@ -1,0 +1,38 @@
+.section-next {
+    position: relative;
+    background: url('~assets/icons/coople-manage/info/whats-next-bkg.svg') no-repeat top center;
+    background-size: cover;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    .next-step-icon {
+        height: 140px;
+    }
+    p {
+        font-size: 21px;
+        line-height: 32px;
+        width: 375px;
+        margin: 0 auto;
+    }
+}
+.section-home {
+    header .logo {
+        height: 100px;
+        margin-top: 65px;
+    }
+    @include media-breakpoint-down(md) {
+        min-height: 1544px;
+        .title-box {
+            margin: 23px auto 0 auto;
+            text-align: center;
+            p {
+                font-size: 24px;
+                line-height: 32px;
+                text-align: center;
+            }
+        }
+        button {
+            display: none;
+        }
+    }
+}

@@ -14,11 +14,14 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.8.0",
+    "bootstrap": "4",
+    "jquery": "3",
     "nuxt": "2.10",
     "nuxt-i18n": "^6.4.0"
   },
   "devDependencies": {
     "@lokalise/node-api": "^1.4.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "dotenv": "^8.2.0",
     "eslint": "^4.19.1",
@@ -31,6 +34,7 @@
     "request": "^2.88.0",
     "responsive-loader": "^1.2.0",
     "sass-loader": "^8.0.0",
-    "unzipper": "^0.10.5"
+    "unzipper": "^0.10.5",
+    "vue-svg-loader": "^0.15.0"
   }
 }
