@@ -116,6 +116,7 @@
 
 <script>
 export default {
+    layout: 'coople-manage',
     head() {
         return {
             title: this.title
@@ -158,8 +159,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import '~assets/styles/coople-manage-common.scss';
+<style lang="scss" scoped>
+@import '~assets/styles/coople-manage.common.scss';
 
 .section-home {
     background: url('~assets/icons/coople-manage/info/home-bkg.svg') no-repeat bottom center;

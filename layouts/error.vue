@@ -7,7 +7,7 @@
 
             <div class="title">{{ message }}</div>
             <p v-if="statusCode === 404" class="description">
-                <NuxtLink class="error-link" to="/">Back to Home</NuxtLink>
+                <NuxtLink class="error-link" :to="localePath({ name: 'home' }, $i18n.locale)">Back to Home</NuxtLink>
             </p>
         </div>
     </div>

@@ -206,20 +206,21 @@
 
 <script>
 export default {
-    data() {
-        return {
-            title: 'Coople - Manage',
-        };
-    },
+    layout: 'coople-manage',
     head() {
         return {
             title: this.title,
         };
     },
+    data() {
+        return {
+            title: 'Coople - Manage',
+        };
+    },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @media (min-width: 1200px) {
     .section-job .container {
         max-width: 1450px;

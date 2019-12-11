@@ -38,7 +38,7 @@ module.exports = {
         componentsPlugin: ['CarouselPlugin']
     },
     styleResources: {
-        scss: ['~assets/styles/main.scss'],
+        scss: ['~assets/styles/coople-manage.main.scss'],
     },
     router: {
         middleware: 'test',
