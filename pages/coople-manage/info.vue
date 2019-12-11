@@ -86,89 +86,28 @@
         </section>
         <section class="section-next">
             <h2 class="m-0 text-center">What's next?</h2>
-
-            <div id="whatsNextCarouselCmp" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#whatsNextCarouselCmp" data-slide-to="0" class="active"></li>
-                    <li data-target="#whatsNextCarouselCmp" data-slide-to="1"></li>
-                    <li data-target="#whatsNextCarouselCmp" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item text-center mt-5 active" data-interval="">
+            <b-carousel id="whatsNextCarouselCmp" ref="whatsNextCarouselCmp" indicators>
+                <b-carousel-slide
+                    v-for="step in steps"
+                    :key="step.index"
+                    class="carousel-item text-center mt-5"
+                >
+                    <template v-slot:img>
                         <div class="next-step-icon d-flex justify-content-center align-items-end">
-                            <img src="~/assets/icons/coople-manage/info/in-touch-step.svg" alt="" />
+                            <img :src="step.imgSrc" alt="" />
                         </div>
-                        <h3 class="mb-4 mt-3">We'll be in touch</h3>
-                        <p>
-                            You should receive an email from us soon with the subject line ‘You’re
-                            invited!’ Be sure to open the email because it will contain a link to
-                            download the app!
-                        </p>
-                    </div>
-                    <div class="carousel-item text-center mt-5" data-interval="">
-                        <div class="next-step-icon d-flex justify-content-center align-items-end">
-                            <img src="~/assets/icons/coople-manage/info/download-step.svg" alt="" />
-                        </div>
-                        <h3 class="mb-4 mt-3">Download the app</h3>
-                        <p>
-                            You’ll need to click on the link in the email to download the app. It’s
-                            important that you only use the link in the email to download the app
-                            rather than downloading it directly from the app store. This is because
-                            you will need a specific version of the app that works with jobs posted
-                            by your employer.
-                        </p>
-                    </div>
-                    <div class="carousel-item text-center mt-5" data-interval="">
-                        <div class="next-step-icon d-flex justify-content-center align-items-end">
-                            <img src="~/assets/icons/coople-manage/info/setup-step.svg" alt="" />
-                        </div>
-                        <h3 class="mb-4 mt-3">Set up your account</h3>
-                        <p>
-                            Once you have the app installed, all you have to do is follow the simple
-                            in-app instructions to set up your account. Then it’s just a case of
-                            checking the jobs posted by your employer and applying to the ones that
-                            fit your availability.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
+                        <h3 class="mb-4 mt-3">{{ step.header }}</h3>
+                        <p>{{ step.content }}</p>
+                    </template>
+                </b-carousel-slide>
+            </b-carousel>
             <div id="whatsNextDefault" class="row">
-                <div class="col text-center mt-5">
+                <div v-for="step in steps" :key="step.index" class="col text-center mt-5">
                     <div class="next-step-icon d-flex justify-content-center align-items-end">
-                        <img src="~/assets/icons/coople-manage/info/in-touch-step.svg" alt="" />
+                        <img :src="step.imgSrc" alt="" />
                     </div>
-                    <h3 class="mb-4 mt-3">We'll be in touch</h3>
-                    <p>
-                        You should receive an email from us soon with the subject line ‘You’re
-                        invited!’ Be sure to open the email because it will contain a link to
-                        download the app!
-                    </p>
-                </div>
-                <div class="col text-center mt-5">
-                    <div class="next-step-icon d-flex justify-content-center align-items-end">
-                        <img src="~/assets/icons/coople-manage/info/download-step.svg" alt="" />
-                    </div>
-                    <h3 class="mb-4 mt-3">Download the app</h3>
-                    <p>
-                        You’ll need to click on the link in the email to download the app. It’s
-                        important that you only use the link in the email to download the app rather
-                        than downloading it directly from the app store. This is because you will
-                        need a specific version of the app that works with jobs posted by your
-                        employer.
-                    </p>
-                </div>
-                <div class="col text-center mt-5">
-                    <div class="next-step-icon d-flex justify-content-center align-items-end">
-                        <img src="~/assets/icons/coople-manage/info/setup-step.svg" alt="" />
-                    </div>
-                    <h3 class="mb-4 mt-3">Set up your account</h3>
-                    <p>
-                        Once you have the app installed, all you have to do is follow the simple
-                        in-app instructions to set up your account. Then it’s just a case of
-                        checking the jobs posted by your employer and applying to the ones that fit
-                        your availability.
-                    </p>
+                    <h3 class="mb-4 mt-3">{{ step.header }}</h3>
+                    <p>{{ step.content }}</p>
                 </div>
             </div>
         </section>
@@ -177,16 +116,45 @@
 
 <script>
 export default {
+    head() {
+        return {
+            title: this.title
+        };
+    },
     data() {
         return {
             title: 'What to Expect',
+            steps: [
+                {
+                    index: 0,
+                    imgSrc: require('~/assets/icons/coople-manage/info/in-touch-step.svg'),
+                    header: `We'll be in touch`,
+                    content: `You should receive an email from us soon with the subject line ‘You’re
+                            invited!’ Be sure to open the email because it will contain a link to
+                            download the app!`
+                },
+                {
+                    index: 1,
+                    imgSrc: require('~/assets/icons/coople-manage/info/download-step.svg'),
+                    header: 'Download the app',
+                    content: `You’ll need to click on the link in the email to download the app. It’s
+                            important that you only use the link in the email to download the app
+                            rather than downloading it directly from the app store. This is because
+                            you will need a specific version of the app that works with jobs posted
+                            by your employer.`
+                },
+                {
+                    index: 2,
+                    imgSrc: require('~/assets/icons/coople-manage/info/setup-step.svg'),
+                    header: 'Set up your account',
+                    content: `Once you have the app installed, all you have to do is follow the simple
+                            in-app instructions to set up your account. Then it’s just a case of
+                            checking the jobs posted by your employer and applying to the ones that
+                            fit your availability.`
+                }
+            ],
         };
     },
-    head() {
-        return {
-            title: this.title,
-        };
-    }
 };
 </script>
 

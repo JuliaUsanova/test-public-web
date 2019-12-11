@@ -1,9 +1,5 @@
 {
-  "compilerOptions": {
-    "types": [
-      "nuxt-i18n",
-      "@nuxt/vue-app",
-      "@nuxtjs/axios"
-    ]
-  }
+    "compilerOptions": {
+        "types": ["nuxt-i18n", "@nuxt/vue-app", "@nuxtjs/axios", "dist/web-types.json"]
+    }
 }

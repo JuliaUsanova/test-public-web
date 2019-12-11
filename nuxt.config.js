@@ -29,8 +29,14 @@ module.exports = {
         'nuxt-i18n',
         '@nuxtjs/axios',
         '~/modules/hooks',
+        'bootstrap-vue/nuxt',
         '@nuxtjs/style-resources',
     ],
+    bootstrapVue: {
+        bootstrapCSS: false, // Or `css: false`
+        bootstrapVueCSS: false, // Or `bvCSS: false`
+        componentsPlugin: ['CarouselPlugin']
+    },
     styleResources: {
         scss: ['~assets/styles/main.scss'],
     },
@@ -187,5 +193,5 @@ module.exports = {
                 });
             }
         },
-    },
+    }
 };
